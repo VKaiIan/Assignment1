@@ -74,34 +74,27 @@ var isWinner = function() {
   return isWinner.length > 0 ? currentState[isWinner[0][0]] : false;
 };
 
-/**
- * Check if the square is first in the row
- * @param  {Integer}  id The ID for the square
- * @return {Boolean}     Returns true if first in the row
- */
+//checks if fitst row cell
+//id is integer
+//return true return is boolean
 var isFirstInRow = function(id) {
   if (id === 0 || id === 5 || id === 10 || id === 15 || id === 20) {
     return id;
   }
 };
 
-/**
- * Check if the square is last in the row
- * @param  {Integer}  id The ID for the square
- * @return {Boolean}     Returns true if last in the row
- */
+//checks if last row cell
+//id is integer
+//reutrn true return is boolean
 var isLastInRow = function(id) {
   if (id === 4 || id === 9 || id === 14 || id === 19 || id === 24) {
     return id;
   }
 };
 
-/**
- * Build each square of the game board
- * @param  {Array}   state  The board state
- * @param  {Boolean} winner If true, someone won the game
- * @return {String}         The markup
- */
+//state is array(board state)
+//winner is boolean, true if one player win game
+//returns string(markup)
 var buildSquares = function(state, winner) {
   // Setup rows
   var rows = "";
@@ -136,11 +129,9 @@ var buildSquares = function(state, winner) {
   return rows;
 };
 
-/**
- * Build the game board
- * @param  {Array} state The state to build from
- * @return {String}      The markup based on the state
- */
+//build game boear
+//state is array to build from
+//returns string markup based in state
 var buildBoard = function(state) {
   // Check if there's a winner
   var winner = isWinner();
@@ -158,20 +149,16 @@ var buildBoard = function(state) {
   return rows;
 };
 
-/**
- * Update the board based on a state
- * @param  {Array} state The state to update from (optional, defaults to currentState)
- */
+//updates board based on state
+//state is array updates from (optional, defaults to currentState)
 var updateBoard = function(state) {
   var gboard = document.querySelector("#board");
   if (!gboard) return;
   gboard.innerHTML = buildBoard(state || currentState);
 };
 
-/**
- * Render the board again based on the current user's turn
- * @param  {Node} square The square that was selected
- */
+//render the board again based on current users turn
+//square is node that was selected
 var renderTurn = function(square) {
   // Get selected value
   var selected = square.getAttribute("data-id");
