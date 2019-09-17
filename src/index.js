@@ -1,5 +1,3 @@
-import "./styles.css";
-
 //
 // Variables
 //
