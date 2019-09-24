@@ -109,14 +109,24 @@ var buildSquares = function(state, winner) {
       rows += "<tr>";
     }
     rows +=
-      '<td><button class="game-square" data-id="' +
+      '<td class="game-square" data-id="' +
       id +
       '"' +
       selected +
       disabled +
       ">" +
       value +
-      "</button></td>";
+      "</td>";
+
+    //rows +=
+    //'<td><button class="game-square" data-id="' +
+    //id +
+    //'"' +
+    //selected +
+    //disabled +
+    //">" +
+    //value +
+    //"</button></td>";
 
     // Check if it's the last column in a row
     if (isLastInRow(id)) {
